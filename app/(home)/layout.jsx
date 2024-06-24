@@ -8,7 +8,7 @@ function layout({children}) {
       <Navbar />
         {children}
       <Footer />
-      <div className='h-[78px] bg-[#F7F5F9] flex items-center justify-center font-medium	  '> <div>© Purple Cues Private Limited </div></div>
+      <div className=' max-sm:h-[40px]  sm:h-[78px] bg-[#F7F5F9] flex items-center justify-center font-medium	  '> <div>© Purple Cues Private Limited </div></div>
     </div>
   )
 }

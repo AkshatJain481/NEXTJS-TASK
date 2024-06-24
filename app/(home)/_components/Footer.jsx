@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <section className='px-[10%] py-[4%] '>
-        <div className='flex justify-between'>
+    <section className=' px-[4%] lg:px-[10%] py-[4%] '>
+        <div className='  min-[470px]:flex justify-between max-[470px]:space-y-10 flex-wrap min-[470px]:space-x-10 '>
                 
                 <div>
                     <h4 className='text-[14px] font-bold mb-4'>Hobbycue</h4>
@@ -37,7 +37,7 @@ function Footer() {
                 </div>
             
         
-        <div className='space-y-14'>
+        <div className='space-y-14 min-[470px]:max-[863.5px]:pt-10 '>
                     <div>
                     <h4 className='text-[14px] font-bold mb-4'>Social Media</h4>
                     <ul className='space-x-6 flex'>

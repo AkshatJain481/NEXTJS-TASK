@@ -1,14 +1,16 @@
-import React from 'react'
+"use client"
+import React , { useState} from 'react'
 import Image from 'next/image'
 
 
 function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
   return (
-    // <div className='fixed bg-white w-full'>
-    <div className='h-[80px] z-50 shadow-md relative '>
-        <div className='px-[5%] py-2 flex space-x-10 justify-between items-center '>
-            <div className='flex  items-center space-x-16 '>
-            <div>
+    <div className='min-sm:h-[80px] max-[460px]:h-[50px] z-50 shadow-md relative flex items-center    '>
+        <div className='px-[5%] py-2 flex justify-between items-center w-full sm:space-x-10 '>
+            <div className='flex  items-center justify-between w-full space-x-4 min-[370px]:space-x-10 '>
+            <div className='min-w-[180px] '>
                 <img
                     src='https://s3-alpha-sig.figma.com/img/153c/f988/785cdcec05510cbdc9cb1b82a17b77fc?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GJ1oSBfJTmdqRIDA-g0cFKb8FFwhZcyHwpcMzk-a596zH3qy6jN~whBpS5iRacCGZhA1qbydqM~vD9Ri51TnChGVRGfyYM-OIduFL20IvHyuycgOTkNGloG~oh9UNvw7hwtdPFWEI5CjwWhGxlqV4GP9DiHM3Kca2e1eSAx6cYK1Xa-iV3rR-ghHPWcAbtJfIu8NNUcx2SiuzGZ-D2rjo6sJCyQdAYbPcO~F1az2aHX3GN6JrNt04ZKAXrGPWfOK8hqYBGSXmHAZ45zJc4VvInm75oQHJHo6sf5-ETV-ZWcsyLYCQ6jo6vrO43NyvUxpR05WMgx7UK-g0AL86Na~8A__'
                     alt='logo'
@@ -16,19 +18,19 @@ function Navbar() {
                     height={0} 
                     />
             </div>
-            <div className="flex items-center border border-gray-300 rounded-lg  overflow-hidden bg-[#F8F9FA] w-[300px]">
+            <div className="flex min-w-[44px] min-h-[44px] items-center border border-gray-300 rounded-lg max-[1220px]:border-none   overflow-hidden min-[1220px]:bg-[#F8F9FA]">
                 <input
                     type="text"
                     placeholder="Search here..."
-                    className="flex-grow p-2 outline-none  bg-[#F8F9FA]"
+                    className="flex-grow p-2 outline-none  bg-[#F8F9FA]  max-[1220px]:hidden max-xl:max-w-[130px]   xl:max-2xl:max-w-[184px]  "
                 />
-                <button className="bg-[#8064A2] p-3 ">
+                <button className=" min-[1220px]:bg-[#8064A2] min-w-[44px] min-h-[44px]  p-3   ">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className="h-5 w-5 text-white"
+                    className="h-5 w-5 min-[1220px]:text-white max-[1220px]:text-[#8064A2]  "
                     >
                     <path
                         strokeLinecap="round"
@@ -41,35 +43,82 @@ function Navbar() {
                 </div>
                 </div>
 
-                <div className='flex items-center space-x-8'>
+                <div className='flex items-center space-x-2   max-[437px]:justify-around min-[437px]:space-x-10 justify-end sm:justify-around w-full'>
                 
-                <div >
-                    <button className='flex space-x-2 items-center '>
+                <div className=' max-[910px]:hidden'>
+                    <button className='flex space-x-2 items-center relative ' onClick={() => {setIsOpen(!isOpen)
+                        console.log('clicked')
+                    }}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 0.0390625C4.49875 0.0390625 0.0390625 4.49875 0.0390625 10C0.0390625 15.5013 4.49875 19.9609 10 19.9609C15.5013 19.9609 19.9609 15.5013 19.9609 10C19.9609 4.49875 15.5013 0.0390625 10 0.0390625ZM14.7405 5.83656L12.0142 11.7991C11.9706 11.8942 11.8942 11.9706 11.7991 12.0142L5.83656 14.7405C5.46953 14.9083 5.09172 14.53 5.25906 14.163L7.98531 8.20047C8.02891 8.10531 8.10531 8.02891 8.20047 7.98531L14.163 5.25906C14.53 5.09172 14.9083 5.47 14.7405 5.83656Z" fill="#8064A2"/>
                     <path d="M10.7355 9.85321C10.7303 9.82931 10.7242 9.8054 10.7172 9.78196C10.7102 9.759 10.7017 9.73556 10.6923 9.71306C10.683 9.69056 10.6727 9.66806 10.6614 9.6465C10.6497 9.62493 10.637 9.60384 10.6234 9.58368C10.6098 9.56306 10.5953 9.54337 10.5798 9.52415C10.5644 9.5054 10.5475 9.48712 10.5302 9.46978C10.5128 9.45243 10.4945 9.43556 10.4758 9.42009C10.4566 9.40462 10.4369 9.39009 10.4163 9.3765C10.3961 9.3629 10.375 9.35025 10.3534 9.33853C10.3319 9.32728 10.3094 9.3165 10.2869 9.30759C10.2644 9.29821 10.2409 9.28978 10.218 9.28275C10.1945 9.27525 10.1706 9.26915 10.1467 9.26447C10.1223 9.25978 10.098 9.25603 10.0736 9.25368C10.0248 9.24853 9.97516 9.24853 9.92641 9.25368C9.90203 9.25603 9.87766 9.25978 9.85328 9.26447C9.82937 9.26915 9.80547 9.27525 9.78203 9.28275C9.75906 9.28978 9.73563 9.29821 9.71313 9.30759C9.69063 9.3165 9.66813 9.32728 9.64656 9.33853C9.625 9.35025 9.60391 9.3629 9.58375 9.3765C9.56312 9.39009 9.54344 9.40462 9.52422 9.42009C9.50547 9.43556 9.48672 9.45243 9.46984 9.46978C9.4525 9.48712 9.43563 9.5054 9.42016 9.52415C9.40469 9.54337 9.38969 9.56306 9.37656 9.58368C9.36297 9.60384 9.35031 9.62493 9.33859 9.6465C9.32734 9.66806 9.31656 9.69056 9.30766 9.71306C9.29828 9.73556 9.28984 9.759 9.28281 9.78196C9.27531 9.8054 9.26922 9.82931 9.26453 9.85321C9.25984 9.87759 9.25609 9.90196 9.25375 9.92634C9.25141 9.95071 9.25 9.97556 9.25 9.99993C9.25 10.0243 9.25141 10.0492 9.25375 10.0735C9.25609 10.0979 9.25984 10.1223 9.26453 10.1467C9.26922 10.1706 9.27531 10.1945 9.28281 10.2179C9.28984 10.2409 9.29828 10.2643 9.30766 10.2868C9.31656 10.3093 9.32734 10.3318 9.33859 10.3534C9.35031 10.3749 9.36297 10.396 9.37656 10.4162C9.39016 10.4368 9.40469 10.4565 9.42016 10.4757C9.43563 10.4945 9.4525 10.5127 9.46984 10.5301C9.48719 10.5474 9.50547 10.5643 9.52422 10.5798C9.54344 10.5952 9.56312 10.6098 9.58375 10.6234C9.60391 10.637 9.625 10.6496 9.64656 10.6613C9.66813 10.6726 9.69063 10.6829 9.71313 10.6923C9.73563 10.7016 9.75906 10.7101 9.78203 10.7171C9.80547 10.7241 9.82937 10.7302 9.85328 10.7354C9.87766 10.7401 9.90203 10.7438 9.92641 10.7462C9.95078 10.7485 9.97562 10.7499 10 10.7499C10.0244 10.7499 10.0492 10.7485 10.0736 10.7462C10.098 10.7438 10.1223 10.7401 10.1467 10.7354C10.1706 10.7302 10.1945 10.7241 10.218 10.7171C10.2409 10.7101 10.2644 10.7016 10.2869 10.6923C10.3094 10.6829 10.3319 10.6726 10.353 10.6613C10.375 10.6496 10.3961 10.637 10.4163 10.6234C10.4369 10.6098 10.4566 10.5952 10.4753 10.5798C10.4945 10.5643 10.5128 10.5474 10.5302 10.5301C10.5475 10.5127 10.5644 10.4945 10.5798 10.4757C10.5953 10.4565 10.6098 10.4368 10.6234 10.4162C10.637 10.396 10.6497 10.3749 10.6609 10.3534C10.6727 10.3318 10.683 10.3093 10.6923 10.2868C10.7017 10.2643 10.7102 10.2409 10.7172 10.2179C10.7242 10.1945 10.7303 10.1706 10.7355 10.1467C10.7402 10.1223 10.7439 10.0979 10.7463 10.0735C10.7486 10.0492 10.75 10.0243 10.75 9.99993C10.75 9.97556 10.7486 9.95071 10.7463 9.92634C10.7439 9.90196 10.7402 9.87759 10.7355 9.85321Z" fill="#8064A2"/>
                     </svg>
-                        <div className='font-semibold  xl:text-[10px] 2xl:text-[16px] '>
+                        <div className='font-semibold text-[10px] 2xl:text-[16px] '>
                             Explore
                         </div>
+                        {isOpen && (
+        <div
+          className="absolute top-[55px] text-[#6D747A]  -z-10  w-56 text-start  shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+        
+        >
+          <div className=" -z-10 " role="none">
+            <a
+              href="#"
+              className=" block px-4 py-2 text-sm hover:bg-gray-100 border-b-2 border-[#CED4DA] "
+              
+            >
+              People - Community
+            </a>
+            <a
+              href="#"
+              className=" block px-4 py-2 text-sm hover:bg-gray-100 border-b-2 border-[#CED4DA] "
+             
+            >
+              Places - Venues
+            </a>
+            <a
+              href="#"
+              className="block px-4 py-2 text-sm hover:bg-gray-100 border-b-2 border-[#CED4DA] "
+            
+            >
+              Programs - Events
+            </a>
+            <a
+              href="#"
+              className="block px-4 py-2 text-sm hover:bg-gray-100 border-b-2 border-[#CED4DA] "
+             
+            >
+              Products - Store
+            </a>
+            <a
+              href="#"
+              className=" block px-4 py-2 text-sm hover:bg-gray-100 border-b-2 border-[#CED4DA] "
+           
+            >
+              Blogs
+            </a>
+          </div>
+        </div>
+      )}
                         <div>
                         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.00015 5.07101L2.17915 1.25001C1.76515 0.836014 1.09315 0.836014 0.679152 1.25001C0.265152 1.66401 0.265152 2.33601 0.679152 2.75001L5.29315 7.36401C5.68415 7.75501 6.31715 7.75501 6.70715 7.36401L11.3212 2.75001C11.7352 2.33601 11.7352 1.66401 11.3212 1.25001C10.9072 0.836014 10.2352 0.836014 9.82115 1.25001L6.00015 5.07101Z" fill="#939CA3"/>
                         </svg>
-
+                            
     
                         </div>
                     </button>
+                    
                 </div>
-
-                <div >
+                
+                <div className=' max-[830px]:hidden ' >
                     <button className='flex space-x-2 items-center '>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2.5L20.2272 7.25V16.75L12 21.5L3.77276 16.75V7.25L12 2.5Z" fill="#8064A2"/>
                         <path d="M11.6206 7.13723C11.7422 6.77269 12.2578 6.77269 12.3794 7.13723L13.2814 9.84062C13.3355 10.0028 13.4867 10.1127 13.6577 10.114L16.5075 10.1365C16.8918 10.1395 17.0511 10.6299 16.742 10.8582L14.4497 12.5514C14.3122 12.653 14.2544 12.8308 14.3059 12.9938L15.1652 15.711C15.2811 16.0774 14.864 16.3805 14.5513 16.1571L12.2326 14.5002C12.0935 14.4008 11.9065 14.4008 11.7674 14.5002L9.44871 16.1571C9.13604 16.3805 8.71889 16.0774 8.83476 15.711L9.69405 12.9938C9.7456 12.8308 9.68785 12.653 9.55032 12.5514L7.25798 10.8582C6.94887 10.6299 7.1082 10.1395 7.49248 10.1365L10.3423 10.114C10.5133 10.1127 10.6645 10.0028 10.7186 9.84062L11.6206 7.13723Z" fill="white"/>
                         </svg>
 
-                        <div className='font-semibold  xl:text-[10px] 2xl:text-[16px] '>
+                        <div className='font-semibold  text-[10px] 2xl:text-[16px] '>
                             Hobbies
                         </div>
                         <div>
@@ -82,10 +131,10 @@ function Navbar() {
                     </button>
                 </div>
 
-                <div>
+                <div className='max-[490px]:hidden '>
                 <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 0H2C0.9 0 0 0.9 0 2V18L7 15L14 18V2C14 0.9 13.1 0 12 0Z" fill="#8064A2"/>
-                    </svg>
+                </svg>
 
                 </div>
                 <div>
@@ -101,7 +150,7 @@ function Navbar() {
                     </svg>
 
                 </div>
-                <div>
+                <div className='max-[555px]:hidden'>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.9198 7.24996V7.37996L20.4598 12.78C20.2873 13.4209 19.907 13.9865 19.3786 14.3882C18.8503 14.7899 18.2036 15.0051 17.5398 15H9.88982C9.13882 15.003 8.41398 14.7243 7.85853 14.2188C7.30308 13.7133 6.95741 13.0179 6.88982 12.27L6.23982 4.90996C6.2173 4.66064 6.10207 4.42884 5.91692 4.26035C5.73177 4.09186 5.49016 3.99895 5.23982 3.99996H3.06982C2.80461 3.99996 2.55025 3.89461 2.36272 3.70707C2.17518 3.51953 2.06982 3.26518 2.06982 2.99996C2.06982 2.73475 2.17518 2.48039 2.36272 2.29286C2.55025 2.10532 2.80461 1.99996 3.06982 1.99996H5.23982C5.99083 1.99692 6.71567 2.27566 7.27112 2.78112C7.82657 3.28659 8.17224 3.982 8.23982 4.72996V4.99996H19.9298C20.2149 4.99773 20.4971 5.05646 20.7577 5.17222C21.0182 5.28798 21.2509 5.4581 21.4403 5.67117C21.6297 5.88424 21.7714 6.13534 21.8558 6.40764C21.9402 6.67993 21.9655 6.96712 21.9298 7.24996H21.9198Z" fill="#8064A2"/>
                     <path d="M9.06982 22.0001C10.4505 22.0001 11.5698 20.8808 11.5698 19.5001C11.5698 18.1193 10.4505 17.0001 9.06982 17.0001C7.68911 17.0001 6.56982 18.1193 6.56982 19.5001C6.56982 20.8808 7.68911 22.0001 9.06982 22.0001Z" fill="#8064A2"/>
@@ -110,16 +159,26 @@ function Navbar() {
 
                 </div>
                 <div className="flex justify-center items-center">
-                    <button className="border border-[#8064A2] text-[#8064A2] py-2 px-4 md:px-6 lg:px-8 text-sm md:text-base lg:text-lg rounded-lg font-semibold transition-all duration-300 ease-in-out transform hover:bg-[#8064A2] hover:text-white whitespace-nowrap">
+                    <button className=" max-[910px]:hidden border border-[#8064A2] text-[#8064A2] py-2 px-4 md:px-6 lg:px-8 text-sm md:text-base lg:text-lg rounded-lg font-semibold transition-all duration-300 ease-in-out transform hover:bg-[#8064A2] hover:text-white whitespace-nowrap">
                         Sign In
                     </button>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className=' min-[910px]:hidden '>
+                    <g clip-path="url(#clip0_25085_89)">
+                    <path d="M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z" fill="#8064A2"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_25085_89">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+
                     </div>
 
                     
                 </div>
         </div>
     </div>
-    // </div>
   )
 }
 

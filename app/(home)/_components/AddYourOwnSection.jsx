@@ -4,8 +4,8 @@ function AddYourOwnSection() {
   return (
     <section className='bg-[#F7FDFF] p-[10%]  '>
         <div className='p-8 bg-white border border-[#CED4DA] rounded-lg '>
-            <div className='space-y-10'>
-                <button className='flex space-x-6 items-center'>
+            <div className=' space-y-5 sm:space-y-10'>
+                <button className='flex max-sm:justify-center max-sm:w-full max-sm:space-x-3 sm:space-x-6 items-center'>
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_24231_425)">
                     <g clip-path="url(#clip1_24231_425)">
@@ -24,8 +24,8 @@ function AddYourOwnSection() {
                  <h4 className='font-bold text-[24px] '>Add your own</h4>
                 </button>
 
-                <p className='mt-2'>Are you a teacher or expert?  Do you sell or rent out equipment, venue or event tickets?  Or, you know someone who should be on hobbycue?  Go ahead and Add your Own page</p>
-                <button className='text-[#8064A2] border-[#8064A2] border font-bold rounded-lg px-8 py-2' >Add new</button>
+                <p className='mt-2 max-sm:text-center font-light  '>Are you a teacher or expert?  Do you sell or rent out equipment, venue or event tickets?  Or, you know someone who should be on hobbycue?  Go ahead and Add your Own page</p>
+                <button className='text-[#8064A2] max-sm:w-full border-[#8064A2] border font-bold rounded-lg px-8 py-2' >Add new</button>
 
             </div>
         </div>

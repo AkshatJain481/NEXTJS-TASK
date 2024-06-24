@@ -15,23 +15,38 @@ function TestimonialSection() {
 
           </h3>
 
-          <p className='text-[#6D747A] font-light  text-[18px] leading-7 '>
+          <p className='text-[#6D747A] font-light  text-[14px] lg:text-[18px] leading-6 lg:leading-7 '>
           In a fast growing and ever changing city like Bangalore, it sometimes becomes very difficult to find or connect with like minded people. Websites like hobbycue.com is a great service which helps me get in touch with, communicate, connect, and exchange ideas with other dancers. It also provides the extra benefit of finding products and services that I can avail, which I can be assured is going to be of great quality as it comes recommended by people of the hobbycue community. To have discussions, to get visibility, and to be able to safely explore various hobbies and activities in my city, all under one roof, is an excellent idea and I highly recommend it.
           </p>
-          <div className='flex space-x-24'>
-          <AudioPlayerCard audioSrc='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' imageSrc='https://s3-alpha-sig.figma.com/img/ab9f/15ee/2bc87a41926b207ab3c50bc70b9bd0c4?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DLdu3X0hTU5QxLu4pGAYsA4FzcsRwiPfIrjsKC1gEYnJl7rNTbJmPZ-zXV12F1Ofaqhn7dYd411Xuo9nRUD5-mhD6hQDvUz9x9GXhCOGvtoLTiZyomMj8BX-UvHHZsstOuhI6cVZS8FiTY5KeKPO8r~BmxYdEjKWGOCUZ~q4zE5i4t59TVtgYnzULwSQB2dfHdg~15kh6xEcwnhoKOkwzx0wBBSUB-Lb7eZ31nij~AFOyxBnl0jqLg9FRpth8Kh5~vL8qigqXxvuZFX6uMA7MJjVTZMEW63arWST2qEAdPLsabVjoRWFLIjqosyZhbNV2BN2ohqCHFk~OerzwWYAUw__' />
-          <div className='flex items-center justify-between min-w-[300px]'>
+          <div className='  min-[845px]:flex justify-between space-y-8'>
+          <div className='flex items-center max-[845px]:space-x-6 min-[845px]:justify-between min-w-[200px] lg:min-w-[300px] min-[845px]:hidden '>
             <Image
             src={"https://s3-alpha-sig.figma.com/img/ab9f/15ee/2bc87a41926b207ab3c50bc70b9bd0c4?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DLdu3X0hTU5QxLu4pGAYsA4FzcsRwiPfIrjsKC1gEYnJl7rNTbJmPZ-zXV12F1Ofaqhn7dYd411Xuo9nRUD5-mhD6hQDvUz9x9GXhCOGvtoLTiZyomMj8BX-UvHHZsstOuhI6cVZS8FiTY5KeKPO8r~BmxYdEjKWGOCUZ~q4zE5i4t59TVtgYnzULwSQB2dfHdg~15kh6xEcwnhoKOkwzx0wBBSUB-Lb7eZ31nij~AFOyxBnl0jqLg9FRpth8Kh5~vL8qigqXxvuZFX6uMA7MJjVTZMEW63arWST2qEAdPLsabVjoRWFLIjqosyZhbNV2BN2ohqCHFk~OerzwWYAUw__"}
             alt='Album cover'
             width={100}
             height={100}
-            className='rounded-full'
+            className='rounded-full  '
 
             />
             <div>
               <h4 className='text-[#8064A2] text-[18px] font-bold '>Shubha Nagarajan</h4>
               <p className='text-[#0096C8] text-[14px] '>Classical Dancer</p>
+            </div>
+            </div>
+
+          <AudioPlayerCard audioSrc='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' imageSrc='https://s3-alpha-sig.figma.com/img/ab9f/15ee/2bc87a41926b207ab3c50bc70b9bd0c4?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DLdu3X0hTU5QxLu4pGAYsA4FzcsRwiPfIrjsKC1gEYnJl7rNTbJmPZ-zXV12F1Ofaqhn7dYd411Xuo9nRUD5-mhD6hQDvUz9x9GXhCOGvtoLTiZyomMj8BX-UvHHZsstOuhI6cVZS8FiTY5KeKPO8r~BmxYdEjKWGOCUZ~q4zE5i4t59TVtgYnzULwSQB2dfHdg~15kh6xEcwnhoKOkwzx0wBBSUB-Lb7eZ31nij~AFOyxBnl0jqLg9FRpth8Kh5~vL8qigqXxvuZFX6uMA7MJjVTZMEW63arWST2qEAdPLsabVjoRWFLIjqosyZhbNV2BN2ohqCHFk~OerzwWYAUw__' />
+          <div className='flex items-center justify-between min-w-[200px] lg:min-w-[300px] max-[845px]:hidden '>
+            <Image
+            src={"https://s3-alpha-sig.figma.com/img/ab9f/15ee/2bc87a41926b207ab3c50bc70b9bd0c4?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DLdu3X0hTU5QxLu4pGAYsA4FzcsRwiPfIrjsKC1gEYnJl7rNTbJmPZ-zXV12F1Ofaqhn7dYd411Xuo9nRUD5-mhD6hQDvUz9x9GXhCOGvtoLTiZyomMj8BX-UvHHZsstOuhI6cVZS8FiTY5KeKPO8r~BmxYdEjKWGOCUZ~q4zE5i4t59TVtgYnzULwSQB2dfHdg~15kh6xEcwnhoKOkwzx0wBBSUB-Lb7eZ31nij~AFOyxBnl0jqLg9FRpth8Kh5~vL8qigqXxvuZFX6uMA7MJjVTZMEW63arWST2qEAdPLsabVjoRWFLIjqosyZhbNV2BN2ohqCHFk~OerzwWYAUw__"}
+            alt='Album cover'
+            width={100}
+            height={100}
+            className='rounded-full lg:w-[100px] lg:h-[100px] md:w-[70px] '
+
+            />
+            <div>
+              <h4 className='text-[#8064A2] text-[13px] lg:text-[18px] font-bold '>Shubha Nagarajan</h4>
+              <p className='text-[#0096C8] text-[10px] lg:text-[14px] '>Classical Dancer</p>
             </div>
             </div>
 
